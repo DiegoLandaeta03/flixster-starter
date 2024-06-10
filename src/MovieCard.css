@@ -1,0 +1,18 @@
+.movie{
+    transition: all 0.3s ease;
+    margin: 0.5em;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    background-color: white;
+    width: 230px;
+}
+
+.movie:hover{
+    transition: all 0.3s ease;
+    transform: translate3d(0, -2px, 0) scale(1.06);
+}
+
+.movieImage{
+    width: 100%;
+}

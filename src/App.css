@@ -26,3 +26,17 @@
     flex-direction: column;
   }
 }
+
+main{
+  padding: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(113, 19, 36);
+}
+
+footer{
+  background-color: #282c34;
+  margin-top: auto;
+  padding-top: 15em;
+  
+}

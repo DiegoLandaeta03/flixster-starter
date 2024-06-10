@@ -1,0 +1,17 @@
+#searchSection{
+    text-align: left;
+    margin-top: 1em;
+}
+
+#input{
+    width: 30%;
+    margin-right: 1em;
+    margin-left: 5em;
+}
+
+
+#searchButton{
+    background-color: grey;
+    color: white;
+    border-radius: 10px;
+}
