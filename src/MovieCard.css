@@ -1,6 +1,6 @@
 .movie{
     transition: all 0.3s ease;
-    margin: 0.5em;
+    margin: 1em;
     border-width: 2px;
     border-color: black;
     border-style: solid;
@@ -10,7 +10,8 @@
 
 .movie:hover{
     transition: all 0.3s ease;
-    transform: translate3d(0, -2px, 0) scale(1.06);
+    transform: translate3d(0, -2px, 0) scale(1.04);
+    box-shadow: rgba(221, 169, 21, 0.56) 0px 10px 35px 2px;
 }
 
 .movieImage{

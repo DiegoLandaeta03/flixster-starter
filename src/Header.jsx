@@ -3,7 +3,6 @@ import SearchForm from './SearchForm';
 import Dropdown from './Dropdown';
 // import Day from './Day';
 
-
 function Header() {
     return(
         <header>

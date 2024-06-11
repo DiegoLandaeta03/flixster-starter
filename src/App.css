@@ -32,12 +32,3 @@ footer{
   margin-top: auto;
   padding-bottom: 5em;
 }
-
-#loadMore{
-  margin-top: 5em;
-  background-color: rgb(221, 169, 21);
-  color: white;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-}

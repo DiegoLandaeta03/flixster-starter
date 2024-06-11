@@ -1,6 +1,22 @@
-main{
+.movieList{
     padding: 2em;
+    padding-bottom: 0;
     display: flex;
     flex-wrap: wrap;
     background-color: rgb(113, 19, 36);
+}
+
+main{
+    background-color: rgb(113, 19, 36);
+
+}
+
+#loadMore{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background-color: rgb(221, 169, 21);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
 }

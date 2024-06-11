@@ -1,15 +1,14 @@
 // import { useState } from 'react'
 import './App.css'
 import Header from './Header';
-import Movies from './MovieList';
+import MovieList from './MovieList';
 
 const App = () => {
   return(
     <div className="App">
       <Header />
-      <Movies />
+      <MovieList />
       <footer>
-        <button id='loadMore'>Load More</button>
       </footer>
     </div>
   );
