@@ -4,16 +4,21 @@ import Header from './Header';
 import MovieList from './MovieList';
 
 const App = () => {
-  const [data, setData] = useState('');
+  const [search, setSearch] = useState('');
+  const [sort, setSort] = useState('');
 
-  const handleSearch = (newData) => {
-    setData(newData);
+  const handleSearch = (newSearch) => {
+    setSearch(newSearch);
   };
+
+  const handleSort = (newSort) => {
+    setSort(newSort);
+  }
 
   return(
     <div className="App">
-      <Header onDataSubmit={handleSearch}/>
-      <MovieList searchQuery={data}/>
+      <Header onDataSubmit={handleSearch} onSortSubmit={handleSort}/>
+      <MovieList searchQuery={search} sortType={sort}/>
       <footer>
       </footer>
     </div>
