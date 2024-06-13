@@ -5,7 +5,6 @@ function Dropdown({sortType}){
     const handleSort = (event) => {
         event.preventDefault();
         const submittedData = event.target.value;
-        // console.log(submittedData);
         sortType(submittedData);
     };
     return(

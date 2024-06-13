@@ -9,7 +9,6 @@ const MovieList = ({searchQuery, sortType}) => {
     const apiKey = import.meta.env.VITE_API_KEY;
     const [searched, setSearched] = useState(false);
     const[sorted, setSorted] = useState(false);
-    // console.log({searchQuery});
 
     useEffect(() => {
     const options = {
@@ -20,7 +19,6 @@ const MovieList = ({searchQuery, sortType}) => {
         }
         };
         let url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${page}`;
-        // let url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&page=${page}&query=${searchQuery}`;
 
         if(searchQuery != ''){
             console.log(`Search is: ${searchQuery}`)
