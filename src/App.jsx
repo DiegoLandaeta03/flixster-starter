@@ -6,6 +6,7 @@ import MovieList from './MovieList';
 const App = () => {
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState('');
+  const[clearSearch, setClearSearch] = useState(false);
 
   const handleSearch = (newSearch) => {
     setSearch(newSearch);
@@ -18,11 +19,12 @@ const App = () => {
   const handlePlaying = () =>{
     setSearch('');
     setSort('');
+    setClearSearch(true);
   }
 
   return(
     <div className="App">
-      <Header onDataSubmit={handleSearch} onSortSubmit={handleSort} nowPlaying={handlePlaying}/>
+      <Header onDataSubmit={handleSearch} onSortSubmit={handleSort} nowPlaying={handlePlaying} searchText/>
       <MovieList searchQuery={search} sortType={sort}/>
       <footer>
       </footer>

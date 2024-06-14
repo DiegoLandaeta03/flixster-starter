@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 
 function SearchForm({searchData}) {
     const handleSearch = (event) => {
-        event.preventDefault();
-        const submittedData = event.target.elements.dataInput.value;
-        searchData(submittedData);
+        if(event.key === 'Enter' || event.type === 'input') {
+            event.stopPropagation();
+            const submittedData = event.target.value; // simplified
+            searchData(submittedData);
+        }
     };
 
     return(
-        <form onSubmit={handleSearch} id='searchSection'>
-            <input id='input' name='dataInput' placeholder="Search..."></input>
-            <button id='searchButton'>Search</button>
+        <form id='searchSection'>
+            <input onInput={handleSearch} id='input' name='dataInput' placeholder="Search..." ></input>
         </form>
     );
 }

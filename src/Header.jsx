@@ -13,7 +13,6 @@ function Header({onDataSubmit, onSortSubmit, nowPlaying}) {
     return(
         <header>
             <h1 id='flixster'>Flixster</h1>
-            <button onClick={nowPlaying} id='nowPlaying'>Now Playing</button>
             <div id="actionItems">
                 <SearchForm searchData={onDataSubmit}/>
                 <Dropdown sortType={onSortSubmit}/>

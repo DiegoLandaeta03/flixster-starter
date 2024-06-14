@@ -1,11 +1,39 @@
 import { useEffect, useState } from "react";
 import './Modal.css';
-import PropTypes from 'prop-types';
 
 function Modal({movie, close}) {
+    const[trailer, setTrailer] = useState('');
+
+    const getModalVideo = async (movieId) => {
+        const apiKey = import.meta.env.VITE_API_KEY;
+        const videosUrl =  `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}`;
+    
+        const trailerUrl = await fetch(videosUrl)
+            .then((response) => response.json())
+            .then((response) =>
+            response.results.find(
+            (video) => video.site === "YouTube" && video.type === "Trailer"
+            )
+        )
+        .then((trailer) => `https://www.youtube.com/embed/${trailer.key}`)
+        .catch((error) => {
+        console.error("Error fetching movie trailer:", error);
+        });
+
+        setTrailer(trailerUrl);
+    };
+    
+    useEffect(() => {
+        getModalVideo(movie.id);
+    }, [movie]);;
+
+    const handleModalClose = (e) => {
+        e.stopPropagation()
+    }
+
     return(
-        <div className="modal">
-            <div className="modal-content">
+        <div className="modal" onClick={close}>
+            <div className="modal-content" onClick={handleModalClose}>
                 <span  onClick={close} className="close">&times;</span>
                 <div id="imageAndTitle">
                     <img id="movieImage" src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt="Movie Image" />
@@ -15,6 +43,15 @@ function Modal({movie, close}) {
                         <p id="overview">Overview: {movie.overview}</p>
                     </div>
                 </div>
+                { trailer &&
+                <iframe
+                    src={trailer} // CHANGE TRAILER VARIABLE TO YOURS
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title="Movie Trailer"
+                    className="modal-movie-trailer" // CHANGE CLASS NAME TO YOURS
+                ></iframe>
+                }
             </div> 
         </div>
     );

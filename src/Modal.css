@@ -4,7 +4,7 @@
     left: 0;
     top: 0;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    height: 100%; /*  Full height */
     background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
     overflow: auto;
 }
@@ -14,8 +14,7 @@
     padding: 20px;
     border: 1px solid #888;
     border-radius: 20px;
-    width: 40vw;
-    height: 40vw;
+    width: 70%;
     overflow: auto;
 }
 
@@ -52,12 +51,7 @@
     font-size: 1vw;
 }
 
-#imageAndTitle{
-    height: 80%;
-}
-
 #movieImage{
-    width: 32vw;
-    height: 25vw;
+    width: 70%;
     border-radius: 10px;
 }

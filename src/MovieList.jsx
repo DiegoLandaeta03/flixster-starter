@@ -4,7 +4,7 @@ import './MovieList.css';
 import PropTypes from 'prop-types';
 import Modal from "./Modal";
 
-const MovieList = ({searchQuery, sortType, nowPlaying}) => {
+const MovieList = ({searchQuery, sortType}) => {
     const [data, setData] = useState([]);
     const [page, setPage] = useState(1);
     const apiKey = import.meta.env.VITE_API_KEY;
@@ -13,18 +13,10 @@ const MovieList = ({searchQuery, sortType, nowPlaying}) => {
     const[modalOpen, setModalOpen] = useState(false);
     const[currMovie, setMovie] = useState();
 
-    if(nowPlaying){
-        setPage(1);
-        setSearched(false);
-        setModalOpen(false);
-        setSorted(false);
-    }
-
     useEffect(() => {
         let url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${page}`;
 
         if(searchQuery != ''){
-            console.log(`Search is: ${searchQuery}`)
             if(!searched){
                 setPage(1);
                 setSearched(true);
@@ -50,14 +42,14 @@ const MovieList = ({searchQuery, sortType, nowPlaying}) => {
                 setSorted(true);
             }
             if(page > 1){
-                url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${page}&sort_by=${sortType}`;
+                url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&include_adult=false&page=${page}&sort_by=${sortType}`;
                 fetch(url)
                     .then(response => response.json())
                     .then(response => setData([...data, ...response.results]))
                     .catch(err => console.error(err));
             }
             else{
-                url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${page}&sort_by=${sortType}`;
+                url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&include_adult=false&page=${page}&sort_by=${sortType}`;
                 fetch(url)
                     .then(response => response.json())
                     .then(response => setData(response.results))
@@ -65,9 +57,12 @@ const MovieList = ({searchQuery, sortType, nowPlaying}) => {
             }
         } else { 
             if(searched || sorted){
+                console.log(`Searched: ${searched}, sorted: ${sorted}`)
                 setSearched(false);
                 setSorted(false);
+                console.log(`Back to main`);
                 setPage(1);
+                url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=1`;
                 fetch(url)
                     .then(response => response.json())
                     .then(response => setData(response.results))
