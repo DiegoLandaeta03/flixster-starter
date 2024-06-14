@@ -16,8 +16,4 @@ function SearchForm({searchData}) {
     );
 }
 
-SearchForm.propTypes = {
-    searchData: PropTypes.func,
-};
-
 export default SearchForm;

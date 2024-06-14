@@ -15,9 +15,4 @@ function Header({onDataSubmit, onSortSubmit}) {
     );
 }
 
-Header.propTypes = {
-    onDataSubmit: PropTypes.func,
-    onSortSubmit: PropTypes.func,
-};
-
 export default Header;

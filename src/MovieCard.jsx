@@ -9,7 +9,7 @@ const MovieCard = ({image, movieTitle, rating, onViewMore}) => {
                     <h4 className="songName">{movieTitle}</h4>
                     <p className="rating">Rating: {rating}</p>
             </div>
-            <button onClick={onViewMore}>View Details</button>
+            <button id='viewDetails' onClick={onViewMore}>View Details</button>
         </div>
     );
 }

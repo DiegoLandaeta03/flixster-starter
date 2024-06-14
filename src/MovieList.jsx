@@ -14,13 +14,6 @@ const MovieList = ({searchQuery, sortType}) => {
     const[currMovie, setMovie] = useState();
 
     useEffect(() => {
-    const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNWI2NmYyNjlhNTM1ZDFiNjY5ODM1MTI2ZGJhZjhlNCIsInN1YiI6IjY2NjdjZDBiZWM2YmUzOGRlZmQwMmVjYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BjLg00u-FmZoO9cFk_kCvpZP4GYtUVHe7-LwF1jWsBc'
-        }
-        };
         let url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${page}`;
 
         if(searchQuery != ''){
