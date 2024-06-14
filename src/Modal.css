@@ -1,0 +1,63 @@
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    overflow: auto;
+}
+.modal-content {
+    background-color: rgb(40, 44, 52, 0.9);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    width: 40vw;
+    height: 40vw;
+    overflow: auto;
+}
+
+.close {
+    transition: all 0.5s ease;
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    transition: all 0.3s ease;
+    color: rgb(113, 19, 36);
+    text-decoration: none;
+    cursor: pointer;
+    transform: translate3d(0, -2px, 0) scale(1.3);
+}
+
+#titleAndOverview{
+    color: white;
+    padding-bottom: 1vw;
+}
+
+#movieName{
+    font-size: 2vw;
+}
+
+#releaseDate{
+    font-size: 1.5vw;
+}
+
+#overview{
+    font-size: 1vw;
+}
+
+#imageAndTitle{
+    height: 80%;
+}
+
+#movieImage{
+    width: 25vw;
+    height: 25vw;
+    border-radius: 10px;
+}

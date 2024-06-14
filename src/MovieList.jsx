@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import './MovieList.css';
 import PropTypes from 'prop-types';
+import Modal from "./Modal";
 
 const MovieList = ({searchQuery, sortType}) => {
     const [data, setData] = useState([]);
@@ -9,6 +10,8 @@ const MovieList = ({searchQuery, sortType}) => {
     const apiKey = import.meta.env.VITE_API_KEY;
     const [searched, setSearched] = useState(false);
     const[sorted, setSorted] = useState(false);
+    const[modalOpen, setModalOpen] = useState(false);
+    const[currMovie, setMovie] = useState();
 
     useEffect(() => {
     const options = {
@@ -60,13 +63,11 @@ const MovieList = ({searchQuery, sortType}) => {
                     .then(response => setData(response.results))
                     .catch(err => console.error(err));
             }
-        } else{ 
+        } else { 
             if(searched || sorted){
-                console.log("Used search, now back to now playing");
                 setSearched(false);
                 setSorted(false);
                 setPage(1);
-                console.log(page);
                 fetch(url)
                     .then(response => response.json())
                     .then(response => setData(response.results))
@@ -85,12 +86,27 @@ const MovieList = ({searchQuery, sortType}) => {
         setPage(page + 1);
     }
 
+    const openModal = (movie) =>{
+        setModalOpen(true);
+        setMovie(movie);
+    }
+
+    const closeModal = () =>{
+        setModalOpen(false);
+        setMovie('');
+    }
+
     return(
         <main>
             <div className="movieList">
                 {data.map(movie => (
-                    <MovieCard this movieTitle={movie.title} rating={movie.vote_average} image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} key={`${movie.id}-${Math.random()}`}/>)
+                    <MovieCard this movieTitle={movie.title} rating={movie.vote_average} 
+                    image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+                    key={`${movie.id}-${Math.random()}`} onViewMore={() => openModal(movie)}/>)
                 )}
+                {modalOpen ? (
+                    <Modal movie={currMovie} close={() => closeModal()}/>
+                ) : null}
             </div>
             <button onClick={loadMore} id='loadMore'>Load More</button>
         </main>
