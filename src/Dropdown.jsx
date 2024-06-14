@@ -17,8 +17,4 @@ function Dropdown({sortType}){
     );  
 }
 
-Dropdown.propTypes = {
-    sortType: PropTypes.func,
-};
-
 export default Dropdown;

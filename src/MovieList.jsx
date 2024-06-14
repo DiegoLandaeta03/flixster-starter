@@ -4,7 +4,7 @@ import './MovieList.css';
 import PropTypes from 'prop-types';
 import Modal from "./Modal";
 
-const MovieList = ({searchQuery, sortType}) => {
+const MovieList = ({searchQuery, sortType, nowPlaying}) => {
     const [data, setData] = useState([]);
     const [page, setPage] = useState(1);
     const apiKey = import.meta.env.VITE_API_KEY;
@@ -12,6 +12,13 @@ const MovieList = ({searchQuery, sortType}) => {
     const[sorted, setSorted] = useState(false);
     const[modalOpen, setModalOpen] = useState(false);
     const[currMovie, setMovie] = useState();
+
+    if(nowPlaying){
+        setPage(1);
+        setSearched(false);
+        setModalOpen(false);
+        setSorted(false);
+    }
 
     useEffect(() => {
         let url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${page}`;

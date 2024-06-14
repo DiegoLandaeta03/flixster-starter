@@ -15,9 +15,14 @@ const App = () => {
     setSort(newSort);
   }
 
+  const handlePlaying = () =>{
+    setSearch('');
+    setSort('');
+  }
+
   return(
     <div className="App">
-      <Header onDataSubmit={handleSearch} onSortSubmit={handleSort}/>
+      <Header onDataSubmit={handleSearch} onSortSubmit={handleSort} nowPlaying={handlePlaying}/>
       <MovieList searchQuery={search} sortType={sort}/>
       <footer>
       </footer>

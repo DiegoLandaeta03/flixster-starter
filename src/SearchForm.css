@@ -1,12 +1,11 @@
 #searchSection{
     display: flex;
-    width: 50%;
 }
 
 #input{
     width: 50%;
-    margin-right: 1em;
-    margin-left: 2em;
+    margin-right: 0.5em;
+    margin-left: 1.3em;
     padding: 10px;
     font-size: 16px;
 }
