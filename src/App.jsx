@@ -27,6 +27,9 @@ const App = () => {
       <Header onDataSubmit={handleSearch} onSortSubmit={handleSort} nowPlaying={handlePlaying} searchText/>
       <MovieList searchQuery={search} sortType={sort}/>
       <footer>
+        <p id='contact'> Contact us at: contactus@flixster.com | (805) 324 - 1624</p>
+        <p> </p>
+        <p> Copyright © 2024 Flixster, Inc.</p>
       </footer>
     </div>
   );

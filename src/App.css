@@ -31,5 +31,15 @@
 footer{
   background-color: #282c34;
   margin-top: auto;
-  padding-bottom: 5em;
+  padding-bottom: 1.5em;
+  padding-top: 2em;
+}
+
+footer p{
+  color: white;
+  margin-bottom: 2em;
+}
+
+#contact{
+  margin-top:0;
 }
