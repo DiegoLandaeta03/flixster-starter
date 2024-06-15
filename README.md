@@ -2,7 +2,7 @@
 
 ## Unit Assignment: Flixster
 
-Submitted by: **NAME**
+Submitted by: Diego Landaeta Torres
 
 Estimated time spent: 40 hours
 
