@@ -13,9 +13,14 @@ const MovieCard = ({image, movieTitle, rating, onViewMore}) => {
             setLike('❤️');
         }
     }
+
+    if(image === 'https://image.tmdb.org/t/p/w500null'){
+        image = 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg';
+    }
+
     return(
         <div className="movie">
-            <img className="movieImage" src={image} alt="Movie Image" />
+            <img className="movieImage" src={image} alt={`Image`} />
             <div className="movieDetails">
                     <h4 className="movieName">{movieTitle}</h4>
                     <p className="rating">Rating: {rating}</p>

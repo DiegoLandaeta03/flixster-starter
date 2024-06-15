@@ -34,7 +34,7 @@ function Modal({movie, close}) {
     return(
         <div className="modal" onClick={close}>
             <div className="modal-content" onClick={handleModalClose}>
-                <span  onClick={close} className="close">&times;</span>
+                <span onClick={close} className="close">&times;</span>
                 <div id="imageAndTitle">
                     <img id="movieImage" src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt="Movie Image" />
                     <div id="titleAndOverview">
@@ -42,16 +42,14 @@ function Modal({movie, close}) {
                         <h3 id="releaseDate">Release date: {movie.release_date}</h3>
                         <p id="overview">Overview: {movie.overview}</p>
                     </div>
-                </div>
-                { trailer &&
-                <iframe
-                    src={trailer} // CHANGE TRAILER VARIABLE TO YOURS
+                    <iframe
+                    src={trailer}
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     title="Movie Trailer"
-                    className="modal-movie-trailer" // CHANGE CLASS NAME TO YOURS
+                    className="movieTrailer"
                 ></iframe>
-                }
+                </div>
             </div> 
         </div>
     );
