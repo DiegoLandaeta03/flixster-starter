@@ -6,7 +6,9 @@ Estimated time spent: 40 hours
 
 ## Deployed Website
 
-[`Link to Website](https://flixster-rix7.onrender.com)
+[`Link to Website`](https://flixster-rix7.onrender.com)
+
+- Site does not read from website for font title (seen on video)
 
 ### Application Features
 
