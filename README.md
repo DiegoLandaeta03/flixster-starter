@@ -4,6 +4,12 @@ Submitted by: Diego Landaeta Torres
 
 Estimated time spent: 40 hours
 
+## Deployed Website
+
+[`Link to Website`](https://flixster-rix7.onrender.com)
+
+- Site does not read from website for font title (seen on video)
+
 ### Application Features
 
 #### CORE FEATURES
@@ -29,8 +35,8 @@ Estimated time spent: 40 hours
 
 #### STRETCH FEATURES
 
-- [ ] **Deployment**
-  - [ ] Website is deployed via Render.
+- [x] **Deployment**
+  - [x] Website is deployed via Render.
 - [x] **Embedded Movie Trailers**
   - [x] Within the popup displaying a movie's details, users can play the movie trailer.
 - [ ] **Watched Checkbox**
@@ -53,7 +59,7 @@ Yes, I felt prepared to tackle react using the topics discussed in labs. However
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-If I had more time I would have done the rest of the stretch goals like the sidebar and deploying. I will probably still deploy the website but I did not have enough time to go through the process.
+If I had more time I would have done the rest of the stretch goals like the sidebar. That is basically the last thing I had left.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
@@ -65,7 +71,7 @@ None
 
 ### Shout out
 
-Daniel Fuentes was a big help, we would work through bugs and talk through them high level. I think us talking about react concepts together helped both of us learn and understand it a lot better.
+Daniel Fuentes was a big help, we would work through bugs and talk through them high level. I think us talking about react concepts together helped both of us learn and understand it a lot better. Axel was very helpful in deploying the website too!
 
 
 # React + Vite
