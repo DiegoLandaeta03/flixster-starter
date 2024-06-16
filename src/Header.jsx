@@ -12,7 +12,7 @@ function Header({onDataSubmit, onSortSubmit, nowPlaying}) {
 
     return(
         <header>
-            <img id='flixster' src='https://fontmeme.com/temporary/486db75443c959a1d7e38cd44f640195.png' alt="Flixster Image" />
+            <img id='flixster' src='public/Logo.png' alt="Flixster Image" />
             <div id="actionItems">
                 <SearchForm searchData={onDataSubmit}/>
                 <Dropdown sortType={onSortSubmit}/>
