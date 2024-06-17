@@ -2,6 +2,7 @@ import './Header.css'
 import SearchForm from './SearchForm';
 import Dropdown from './Dropdown';
 import PropTypes from 'prop-types';
+import logo from './assets/Logo.png'
 
 function Header({onDataSubmit, onSortSubmit, nowPlaying}) {
     const handleSearch = (event) => {
@@ -12,7 +13,7 @@ function Header({onDataSubmit, onSortSubmit, nowPlaying}) {
 
     return(
         <header>
-            <img id='flixster' src='src/assets/Logo.png' alt="Flixster Image" />
+            <img id='flixster' src={logo} alt="Flixster Image" />
             <div id="actionItems">
                 <SearchForm searchData={onDataSubmit}/>
                 <Dropdown sortType={onSortSubmit}/>
